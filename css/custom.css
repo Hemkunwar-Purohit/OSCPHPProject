@@ -1,0 +1,43 @@
+.navbar-brand
+{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.5em;
+        
+}
+.navbar #myMenu .custom-nav .nav-item a{
+    color: #fff;
+}
+.navbar #myMenu .custom-nav .nav-item a:hover{
+    color: #f0aab1
+}
+
+ .back-image{
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+    margin-top: 60px;
+     }
+
+ .position{
+    position: absolute;
+    right: 20px;
+    top: 70px;
+   }
+  .position h2{
+    color: green;
+    } 
+   
+    @media only screen and (max-width: 600px)
+    {
+        .position
+        {
+          position: absolute;
+          right: 10px;
+        }
+  }
+  .container{
+    margin-top: 20px;
+    padding-top: 10px;
+    width: 75%;
+    
+      }
