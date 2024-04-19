@@ -1,6 +1,6 @@
 <?php
 define ('TITLE','Profile');
-// define ('PAGE','Profile');
+define ('PAGE','Profile');
 include '../include_custmor/header.php';
 include '../dbconnect.php';
 session_start();

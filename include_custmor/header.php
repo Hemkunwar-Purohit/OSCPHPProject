@@ -18,12 +18,12 @@
         <!-- start sidebar -->
             <nav class="col-sm-2 bg-light sidebar py-5 d-print-none">
                 <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link" href="profile.php"><i class="fa-regular fa-user"></i>Profile</a></li>
-                       <li class="nav-item"><a class="nav-link" href="submit_request.php"><i class="fa-solid fa-check"></i>Submit Request</a></li>
-                       <li class="nav-item"><a class="nav-link" href="check_status.php"><i class="fa-regular fa-clock"></i>Check Status</a></li>
-                       <li class="nav-item"><a class="nav-link" href="change_password.php"><i class="fa-solid fa-lock"></i>Change Password</a></li>
-                       <li class="nav-item"><a class="nav-link" href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+                    <ul class="nav nav-pills flex-column ">
+                    <li class="nav-item"><a class="nav-link <?php if(PAGE=='Profile') {  echo 'active'; } ?>" href="profile.php"><i class="fa-regular fa-user"></i> Profile</a></li>
+                       <li class="nav-item"><a class="nav-link <?php if(PAGE=='Submit Request') {  echo 'active'; } ?>" href="submit_request.php"><i class="fa-solid fa-check"></i> Submit Request</a></li>
+                       <li class="nav-item"><a class="nav-link <?php if(PAGE=='Check Status') {  echo 'active'; } ?>" href="check_status.php"><i class="fa-regular fa-clock"></i> Check Status</a></li>
+                       <li class="nav-item"><a class="nav-link <?php if(PAGE=='Change Password') {  echo 'active'; } ?>" href="change_password.php"><i class="fa-solid fa-lock"></i> Change Password</a></li>
+                       <li class="nav-item"><a class="nav-link" href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
                     </ul>
                 </div>
             </nav>

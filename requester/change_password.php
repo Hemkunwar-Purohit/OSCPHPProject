@@ -1,6 +1,6 @@
 <?php
 define ('TITLE','Change Password');
-// define ('PAGE','Change Password');
+define ('PAGE','Change Password');
 include '../include_custmor/header.php';
 include '../dbconnect.php';
 

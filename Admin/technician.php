@@ -1,5 +1,6 @@
 <?php
 define('TITLE','Technician');
+define('PAGE','Technician');
 include '../dbconnect.php';
 include 'include/header.php';
 session_start();

@@ -5,12 +5,16 @@
     {
         if(isset($_POST['rsignup']))
         {
-            $rname=$_POST['rname'];
-            $remail=$_POST['remail'];
-            $rpassword=$_POST['rpassword'];
+            $rname=test_input($_POST['rname']);
+            $remail=test_input($_POST['remail']);
+            $rpassword=test_input($_POST['rpassword']);
             if(empty($rname))
             {
                 $nameerr=" * Name is required";
+            }
+            elseif(!preg_match("/^[a-zA-Z' ]*$/",$rname))
+            {
+                $nameerr=" * only letters allowed";        
             }
             elseif(empty($remail))
             {
@@ -19,6 +23,10 @@
             elseif(empty($rpassword))
             {
                 $passworderr="* Password is required";
+            }
+            elseif(!preg_match("/^[a-zA-Z1-9]*$/",$rpassword))
+            {
+                $passworderr=" * only letters,numbers and under score are allowed";
             }
             else
             { 
@@ -31,19 +39,29 @@
                 }
                 else
                 {
-                    $sql="INSERT INTO `user_signup`(`name`,`email`,`password`)VALUE('$rname','$remail',$rpassword)";
+                    $hash=password_hash($rpassword,PASSWORD_DEFAULT);
+                    $sql="INSERT INTO `user_signup`(`name`,`email`,`password`)VALUE('$rname','$remail','$hash')";
                     $result=mysqli_query($conn,$sql);
                     if($result)
                     {
-                        $showalert= "<div class='alert alert-success mt-2' role='alert'>
+                        $showalert= "<div class='alert alert-success mt-2 alert-dismissible fade show' role='alert'>
                         <strong>Success!</strong>Your account is now created.
+                        <button type='button'class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                         </div>";
-                    }
-                    
+                    }                                      
                 }
             }
          }
       }
+
+      function test_input($data)
+        {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+        }
+
    ?>
 
 <div class="container pt-5 border-bottom" id="registration">

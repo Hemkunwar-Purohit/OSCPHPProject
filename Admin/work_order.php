@@ -1,5 +1,6 @@
 <?php
 define('TITLE','Work Order');
+define('PAGE','Work Order');
 include '../dbconnect.php';
 include 'include/header.php';
 session_start();

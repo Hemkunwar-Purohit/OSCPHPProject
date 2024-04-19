@@ -1,6 +1,6 @@
 <?php
 define ('TITLE','Check Status');
-// define ('PAGE','Check Status');
+define ('PAGE','Check Status');
 include '../include_custmor/header.php';
 include '../dbconnect.php';
 session_start();

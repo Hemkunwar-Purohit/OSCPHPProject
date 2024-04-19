@@ -1,5 +1,6 @@
 <?php
 define('TITLE','Dashboard');
+define ('PAGE','Dashboard');
 include '../dbconnect.php';
 include 'include/header.php';
 session_start();

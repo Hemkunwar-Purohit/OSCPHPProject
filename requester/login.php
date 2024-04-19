@@ -18,25 +18,38 @@ if($_SERVER['REQUEST_METHOD']=="POST")
         }
         else
         {
-            $sql="SELECT * FROM `user_signup` WHERE `email`='$remail' AND `password`='$rpassword' LIMIT 1"; 
+            $sql="SELECT * FROM `user_signup` WHERE `email`='$remail' LIMIT 1"; 
             $result=mysqli_query($conn,$sql);
             $numrows=mysqli_num_rows($result);
+            $row=mysqli_fetch_assoc($result);
             if($numrows==1)
-            {
-                session_start();
-                $_SESSION['is_login']=true;
-                $_SESSION['remail'] =$remail;  
-                header("location:profile.php");
+            {                                
+                if(password_verify($rpassword,$row['password']))
+                {
+                    session_start();
+                    $_SESSION['is_login']=true;
+                    $_SESSION['remail'] =$remail;  
+                    header("location:profile.php");
+                }
+                else
+                {
+                    $showerr= "<div class='alert alert-danger mt-2 alert-dismissible fade show' role='alert'>
+                    <strong>Login Failed!</strong> Invalid credentials.
+                    <button type='button'class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                    </div>";
+                }
             }
-            else
-            {
-                $showerr= "<div class='alert alert-danger mt-2' role='alert'>
-                <strong>Login Failed!</strong> Invalid credentials.
-                </div>";
+                else
+                {
+                    $showerr= "<div class='alert alert-danger mt-2 alert-dismissible fade show' role='alert'>
+                    <strong>Login Failed!</strong> Invalid credentials.
+                    <button type='button'class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                    </div>";
+                }
             }
         }
     }
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +82,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                 <button type="submit" name="rlogin" class="d-grid gap-2 col-6 mx-auto btn btn-primary mt-3">Login</button>
                 <?php if(isset($showerr)) echo $showerr; ?>
             </form>
-             <div class="text-center"><a href="index.php" class="btn btn-outline-dark mt-4 shadow-sm">Back to Home</a></div>
+             <div class="text-center"><a href="../index.php" class="btn btn-outline-dark mt-4 shadow-sm">Back to Home</a></div>
             </div>
         </div>
     </div>

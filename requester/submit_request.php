@@ -1,6 +1,6 @@
 <?php
 define ('TITLE','Submit Request');
-// define ('PAGE','Submit Request');
+define ('PAGE','Submit Request');
 include '../include_custmor/header.php';
 include '../dbconnect.php';
 session_start();

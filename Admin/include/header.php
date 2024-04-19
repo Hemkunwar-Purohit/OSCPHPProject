@@ -20,23 +20,23 @@
             <!-- start sidebar -->
             <nav class="col-sm-2 bg-light sidebar py-5 d-print-none">
                 <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item"><a class="nav-link" href="dashboard.php"><i
-                                    class="fa-regular fa-user"></i>Dashboard</a></li>
-                        <li class="nav-item"><a class="nav-link" href="work_order.php"><i
-                                    class="fa-solid fa-check"></i>Work Order</a></li>
-                        <li class="nav-item"><a class="nav-link" href="request.php"><i
-                                    class="fa-regular fa-bell"></i>Requests</a></li>
-                        <li class="nav-item"><a class="nav-link" href="technician.php"><i
-                                    class="fa-regular fa-user"></i>Technician</a></li>
-                        <li class="nav-item"><a class="nav-link" href="requester.php"><i
-                                    class="fa-solid fa-users"></i>Requester</a></li>
-                        <li class="nav-item"><a class="nav-link" href="work_report.php"><i
-                                    class="fa-regular fa-clock"></i>Work Report</a></li>
-                        <li class="nav-item"><a class="nav-link" href="change_pass.php"><i
-                                    class="fa-solid fa-lock"></i>Change Password</a></li>
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item"><a class="nav-link <?php if(PAGE=='Dashboard') {  echo 'active'; } ?>" href="dashboard.php"><i
+                                    class="fa-regular fa-user"></i> Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link <?php if(PAGE=='Work Order') {  echo 'active'; } ?>" href="work_order.php"><i
+                                    class="fa-solid fa-check "></i> Work Order</a></li>
+                        <li class="nav-item"><a class="nav-link <?php if(PAGE=='Request') {  echo 'active'; } ?>" href="request.php"><i
+                                    class="fa-regular fa-bell"></i> Requests</a></li>
+                        <li class="nav-item"><a class="nav-link <?php if(PAGE=='Technician') {  echo 'active'; } ?>" href="technician.php"><i
+                                    class="fa-regular fa-user"></i> Technician</a></li>
+                        <li class="nav-item"><a class="nav-link <?php if(PAGE=='Requester') {  echo 'active'; } ?>" href="requester.php"><i
+                                    class="fa-solid fa-users"></i> Requester</a></li>
+                        <li class="nav-item"><a class="nav-link <?php if(PAGE=='Work Report') {  echo 'active'; } ?>" href="work_report.php"><i
+                                    class="fa-regular fa-clock"></i> Work Report</a></li>
+                        <li class="nav-item"><a class="nav-link <?php if(PAGE=='Change Password') {  echo 'active'; } ?>" href="change_pass.php"><i
+                                    class="fa-solid fa-lock"></i> Change Password</a></li>
                         <li class="nav-item"><a class="nav-link" href="../logout.php"><i
-                                    class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+                                    class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
                     </ul>
                 </div>
             </nav>

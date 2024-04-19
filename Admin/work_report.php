@@ -1,5 +1,6 @@
 <?php
 define('TITLE','Work Report');
+define('PAGE','Work Report');
 include '../dbconnect.php';
 include 'include/header.php';
 session_start();

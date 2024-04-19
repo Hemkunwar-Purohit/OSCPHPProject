@@ -1,5 +1,6 @@
 <?php
 define('TITLE','Change Password');
+define('PAGE','Change Password');
 include '../dbconnect.php';
 include 'include/header.php';
 session_start();
