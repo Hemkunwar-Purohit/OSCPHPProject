@@ -30,9 +30,10 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             }
             else
             {
-                $showerr= "<div class='alert alert-danger mt-2' role='alert'>
-                <strong>Login Failed!</strong> Invalid credentials.
-                </div>";
+                $showerr= "<div class='alert alert-danger mt-2 alert-dismissible fade show' role='alert'>
+                    <strong>Login Failed!</strong> Invalid credentials.
+                    <button type='button'class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                    </div>";
             }
         }
     }

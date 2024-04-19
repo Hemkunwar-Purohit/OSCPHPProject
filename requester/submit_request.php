@@ -4,13 +4,14 @@ define ('PAGE','Submit Request');
 include '../include_custmor/header.php';
 include '../dbconnect.php';
 session_start();
-if(!$_SESSION['is_login'])
+if($_SESSION['is_login'])
 {
-    header("location:requester/login.php");
-    // $remail=$_SESSION['remail'];
+    $remail=$_SESSION['remail'];
 }
 else
 {
+    header("location:login.php");
+}
 
     if(isset($_POST['submit']))
     {
@@ -54,7 +55,7 @@ else
             }
         }
     }
-}
+
 ?>
 
 <!-- start submit form -->

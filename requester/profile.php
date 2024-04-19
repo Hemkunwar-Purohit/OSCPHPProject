@@ -10,7 +10,7 @@ if($_SESSION['is_login'])
 }
 else
 {
-    header("location:requester/login.php");
+    header("location:login.php");
 }
 
 $sql="SELECT `name` FROM `user_signup` WHERE `email`='$remail'";
@@ -31,14 +31,16 @@ if(isset($_POST['update']))
         $result=mysqli_query($conn,$sql);
         if($result)
         {
-            $showalert="<div class='alert alert-success mt-2' role='alert'>
-            <strong>Success!</strong>Your Name is Updated.
+            $showalert="<div class='alert alert-success mt-2 alert-dismissible fade show' role='alert'>
+            <strong>Success!</strong> Your Name is Successfully Updated.
+            <button type='button'class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>";
         }
         else
         {
-            $showerr="<div class='alert alert-danger mt-2' role='alert'>
+            $showerr="<div class='alert alert-danger mt-2 alert-dismissible fade show' role='alert'>
             Unable to update.
+            <button type='button'class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>";
         }
 

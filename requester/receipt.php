@@ -3,12 +3,14 @@ define ('TITLE','Receipt');
 include '../include_custmor/header.php';
 include '../dbconnect.php';
 session_start();
-if(!$_SESSION['is_login'])
+if($_SESSION['is_login'])
 {
-    header("location:requester/login.php");
+    $remail=$_SESSION['remail'];
 }
 else
 {
+    header("location:login.php");
+}
     $sql="SELECT * FROM `submit_request` WHERE `sno`={$_SESSION['myid']}";
     $result=mysqli_query($conn,$sql);
     $numRow=mysqli_num_rows($result);
@@ -54,7 +56,7 @@ else
     {
         echo "failed";
     }
-}
+
 ?>
 
 <?php
