@@ -13,7 +13,7 @@ else
     header("location:adminlogin.php");
 }
 ?>
-<div class="col-sm-9 col-md-10 mt-5">
+<div class="col-sm-8 col-md-10 mt-5">
           <table class="table">
             <thead>
                 <tr>
@@ -53,7 +53,7 @@ else
                             <input type="hidden" name="id" value="'.$row['request_id'].'"><button class="btn btn-success" name="view" value="view" type="submit">View</button>
                             </form>
                             <form action="" method="POST" class="d-inline">
-                            <input type="hidden" name="id" value="'.$row['request_id'].'"><button class="btn btn-danger" name="delete" value="Delete" type="submit">Delete</button>
+                            <input type="hidden" name="id" value="'.$row['request_id'].'"><button class="btn btn-danger name="delete" value="Delete" type="submit">Delete</button>
                             </form>
                             </td>
                             </tr>';                            

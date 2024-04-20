@@ -32,15 +32,17 @@ if(isset($_POST['submit']))
             $result=mysqli_query($conn,$sql);
             if($result)
             {
-                 $alert= "<div class='alert alert-success mt-2' role='alert'>
+                 $alert= "<div class='alert alert-success mt-2 alert-dismissible fade show' role='alert'>
                 <strong>Success!</strong>Record submitted successfully.
+                <button type='button'class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                 </div>";
                 
             }
             else
             {
-                $error= "<div class='alert alert-danger mt-2' role='alert'>
+                $error= "<div class='alert alert-danger mt-2 alert-dismissible fade show' role='alert'>
                 Record not submitted.
+                <button type='button'class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                 </div>";
             }
         }

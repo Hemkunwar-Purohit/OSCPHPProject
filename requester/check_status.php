@@ -40,7 +40,7 @@ else
             $row=mysqli_fetch_assoc($result);
             if($row==0)
             {
-                echo '<div class="alert alert-warning mt-4"> Your Request is still Panding</div>';
+                echo '<div class="alert alert-warning mt-4 "> Your Request is still Panding</div>';
             }
             else
             {           

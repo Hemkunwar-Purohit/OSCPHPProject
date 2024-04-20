@@ -1,5 +1,6 @@
 <?php
 define ('TITLE','Receipt');
+define ('PAGE','Submit Request');
 include '../include_custmor/header.php';
 include '../dbconnect.php';
 session_start();

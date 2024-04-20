@@ -26,8 +26,9 @@ else
             $result=mysqli_query($conn,$sql);
             if($result)
             {
-                $showalert="<div class='alert alert-success mt-2' role='alert'>
+                $showalert="<div class='alert alert-success mt-2 alert-dismissible fade show' role='alert'>
                 <strong>Success!</strong>Password has been Changed successfully.
+                <button type='button'class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                 </div>";
             }
             else

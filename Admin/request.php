@@ -65,8 +65,9 @@ if(isset($_POST['close']))
     }
     else
     {
-        $showalert="<div class='alert alert-danger mt-2' role='alert'>
+        $showalert="<div class='alert alert-danger mt-2 alert-dismissible fade show' role='alert'>
                     Unable to delete
+                    <button type='button'class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                     </div>";
     }
 
@@ -76,8 +77,9 @@ if(isset($_POST['assign']))
     {
         if($_POST['request_id']=="" || $_POST['request_info']=="" || $_POST['request_desc']=="" || $_POST['request_name']=="" || $_POST['request_address1']=="" ||$_POST['request_address2']=="" || $_POST['request_city']=="" ||$_POST['request_state']=="" || $_POST['request_pin']=="" || $_POST['request_email']=="" || $_POST['request_mobile']=="" || $_POST['request_assign']=="" || $_POST['request_date']=="")
         {
-            $fielderr="<div class='alert alert-danger mt-2' role='alert'>
+            $fielderr="<div class='alert alert-danger mt-2 alert-dismissible fade show' role='alert'>
             All fields are Required.
+            <button type='button'class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>";
         }
         else

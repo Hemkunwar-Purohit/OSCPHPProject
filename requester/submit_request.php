@@ -17,8 +17,9 @@ else
     {
         if($_POST['info']=="" || $_POST['description']=="" || $_POST['name']=="" || $_POST['address1']=="" ||$_POST['address2']=="" || $_POST['city']=="" ||$_POST['state']=="" || $_POST['pincode']=="" || $_POST['email']=="" || $_POST['mobile']=="" || $_POST['date']=="")
         {
-            $fielderr="<div class='alert alert-danger mt-2' role='alert'>
+            $fielderr="<div class='alert alert-danger mt-2 alert-dismissible fade show' role='alert'>
             All fields are Required.
+            <button type='button'class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>";
         }
         else
@@ -40,8 +41,9 @@ else
             if($result)
             {
                 $genid= mysqli_insert_id($conn);
-                $showalert= "<div class='alert alert-success mt-2' role='alert'>
+                $showalert= "<div class='alert alert-success mt-2 alert-dismissible fade show' role='alert'>
                 <strong>Success!</strong>Record submitted successfully.
+                <button type='button'class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                 </div>";
                 $_SESSION['myid']=$genid;
                 header("location:receipt.php");

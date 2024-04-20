@@ -1,6 +1,6 @@
 <?php
-define('TITLE','Request');
-define('PAGE','Request');
+define('TITLE','Requester');
+define('PAGE','Requester');
 include '../dbconnect.php';
 include 'include/header.php';
 session_start();
